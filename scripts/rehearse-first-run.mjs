@@ -25,6 +25,7 @@ try{
  site.example=false;site.contactMode='email';site.email='owner@sample-repair.test';site.siteUrl='https://sample-repair.test';await writeFile(path,JSON.stringify(site,null,2)+'\n');
  const build=spawn(process.execPath,['scripts/build.mjs','--production'],{cwd:scratch,stdio:'inherit'});await new Promise((resolveBuild,reject)=>{build.once('error',reject);build.once('exit',code=>code===0?resolveBuild():reject(Error('Production rehearsal failed')));});
  if(!(await readFile(join(scratch,'dist/sitemap.xml'),'utf8')).includes('<loc>https://sample-repair.test</loc>'))throw Error('Production sitemap has the wrong origin');
+ if((await readFile(join(scratch,'dist/index.html'),'utf8')).includes('href="/start/"'))throw Error('Onboarding link leaked into production homepage');
  const {access}=await import('node:fs/promises');let onboardingPresent=true;try{await access(join(scratch,'dist/start'));}catch{onboardingPresent=false;}if(onboardingPresent)throw Error('Onboarding leaked into production output');
  console.log('PASS: clean install, setup, optional sections, contact details, verification Cloudflare dry run and production onboarding exclusion. No deployment occurred. Browser/account/human usability checks are separate.');
 }finally{await rm(scratch,{recursive:true,force:true});}

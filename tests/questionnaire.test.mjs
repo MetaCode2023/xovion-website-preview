@@ -8,3 +8,11 @@ test('questionnaire produces a personalized brief and actionable project prompt'
 test('questionnaire validates required facts and live contact destinations',()=>{
  assert.throws(()=>createKit({...facts,name:''}));assert.throws(()=>createKit({...facts,contactMode:'email'}));assert.throws(()=>createKit({...facts,contactMode:'booking',bookingUrl:'javascript:alert(1)'}));assert.throws(()=>createKit({...facts,bookingUrl:'https://user:password@example.com'}));assert.throws(()=>createKit({...facts,domain:'https://example.com/path'}));assert.doesNotThrow(()=>createKit({...facts,contactMode:'booking',bookingUrl:'https://example.com/request'}));
 });
+
+test('questionnaire caps answers, identifies failing fields and accepts only public email syntax',()=>{
+ for(const [field,value] of [['name','x'.repeat(101)],['services','hello\u0000world'],['email','bad email@host.test']]){
+  assert.throws(()=>createKit({...facts,[field]:value}),error=>error.field===field);
+ }
+ assert.throws(()=>createKit({...facts,name:'   '}),error=>error.field==='name');
+ assert.match(createKit(facts).combined,/First save the business brief/);
+});

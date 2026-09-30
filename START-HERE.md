@@ -6,7 +6,7 @@ For examples of a useful brief, see examples/business-briefs/README.md. For a co
 
 ## Browser questionnaire
 
-On a local/deployed preview, open `/start/`. Fill in public business facts and create your brief. Replace BUSINESS-BRIEF.md with the downloaded file and paste the downloaded first prompt into Codex. You can also copy everything from your phone; on your computer, give the combined text to Codex in the starter folder. Answers stay in page memory and are cleared on reload. This does not modify your repo or deploy.
+On a local/deployed preview, open `/start/`. Fill in public business facts and create your brief. Download WEBSITE-KIT.md and give the complete file to Codex. Ask it to save the brief as BUSINESS-BRIEF.md and follow the included first prompt. You can also copy everything from your phone; on your computer, give the combined text to Codex in the starter folder. Answers stay in page memory and are cleared on reload. This does not modify your repo or deploy.
 
 ## Guided setup
 
@@ -41,3 +41,5 @@ Continue from BUILD-STATUS.md in this project. Make this change: [describe it]. 
 ```
 
 If stuck: run `npm run doctor`, then paste its output and the error and say “Diagnose this in the existing project. Fix everything you can, then give me the single next action you need from me.”
+
+Browser kit: `/start/` needs only four essential answers; optional details are expandable. Copy everything or download one WEBSITE-KIT.md containing both the brief and first prompt. Give the whole file to Codex and ask it to save the brief as BUSINESS-BRIEF.md. If downloads/clipboard are blocked, use Select text to copy. Answers are lost when you close/reload the page; copy or download first.
