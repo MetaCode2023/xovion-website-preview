@@ -1,0 +1,81 @@
+{
+  "example": true,
+  "name": "Good Neighbor",
+  "tagline": "Home services, made simple.",
+  "location": "Your town, your neighborhood",
+  "headline": "More time for the place you call home.",
+  "description": "Thoughtful help with everyday home care. Tell us what you need, and let\u2019s make a plan that fits.",
+  "email": "hello@example.com",
+  "siteUrl": "",
+  "contactMode": "demo",
+  "bookingUrl": "",
+  "services": [
+    {
+      "name": "Everyday care",
+      "description": "A helping hand for the recurring tasks that keep your home feeling good."
+    },
+    {
+      "name": "A fresh start",
+      "description": "Focused help when a space needs extra attention and a little more time."
+    },
+    {
+      "name": "Your next chapter",
+      "description": "Support for moving, settling in and making a space your own."
+    }
+  ],
+  "copy": {
+    "navServices": "Services",
+    "navProcess": "Our approach",
+    "navContact": "Get in touch",
+    "cta": "Let\u2019s make a plan",
+    "serviceCta": "Explore this service",
+    "heroSteps": [
+      "Tell us what matters",
+      "Make a plan",
+      "Enjoy your space"
+    ],
+    "servicesEyebrow": "Help that fits your life",
+    "servicesHeading": "A little support. A lot more possibility.",
+    "processEyebrow": "Keep it simple",
+    "processHeading": "Good work starts with a conversation.",
+    "processSteps": [
+      {
+        "title": "Tell us about your space.",
+        "description": "Share what you need and the timing you have in mind."
+      },
+      {
+        "title": "Agree on the details.",
+        "description": "Confirm the scope, price and availability before anything is scheduled."
+      },
+      {
+        "title": "Make it your own.",
+        "description": "Ask questions, share priorities and find a plan that works for you."
+      }
+    ],
+    "faqHeading": "A few questions?",
+    "faqs": [
+      {
+        "question": "What happens when I get in touch?",
+        "answer": "A conversation comes first. A request does not confirm a booking; scope and availability need to be agreed."
+      },
+      {
+        "question": "What if I\u2019m not sure which service fits?",
+        "answer": "Describe what you need help with. We can start there."
+      }
+    ],
+    "contactEyebrow": "Your next step",
+    "contactHeading": "Let\u2019s make room for a better day."
+  },
+  "sections": {
+    "services": true,
+    "process": true,
+    "faq": true
+  },
+  "businessDetails": {
+    "phone": "",
+    "hours": [],
+    "serviceAreas": [],
+    "address": "",
+    "directionsUrl": ""
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "xovion-website-preview",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/dev.mjs",
+    "check": "node --check src/client.js && node --check src/worker.js && node --check scripts/build.mjs && node --check scripts/setup.mjs && node --check scripts/dev.mjs && node --check scripts/doctor.mjs && node --check playwright.config.mjs && node --check browser-tests/homepage.spec.mjs && node --check scripts/check-private.mjs && node --check scripts/rehearse-first-run.mjs && node --check public/start/kit.mjs && node --check public/start/app.mjs && node --check browser-tests/onboarding.spec.mjs",
+    "test": "node --test",
+    "verify": "npm run check && npm run check:private && npm test && npm run build",
+    "deploy:preview": "npm run verify && wrangler deploy --env \"\"",
+    "deploy:production": "npm run verify && node scripts/build.mjs --production && wrangler deploy --env production",
+    "setup": "node scripts/setup.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "test:browser": "playwright test",
+    "check:private": "node scripts/check-private.mjs",
+    "test:first-run": "node scripts/rehearse-first-run.mjs",
+    "deploy": "npm run deploy:preview"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "wrangler": "4.145.0"
+  }
+}
